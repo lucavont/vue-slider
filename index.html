@@ -36,7 +36,15 @@
             <div class="col">
                 <img :src="imageSrc[currentIndex]" alt="">
             </div>
-            <div class="col-2 d-flex justify-content-center align-items-center"><a @click="nextImg" href="#"><i class="far fa-caret-square-right"></i></a></div>
+            <div v-on:keyup.39="nextImg()" class="col-2 d-flex justify-content-center align-items-center"><a @click="nextImg" href="#"><i class="far fa-caret-square-right"></i></a></div>
+        </div>
+
+        <div class="row">
+            <div class="col d-flex justify-content-center align-items-center">
+                <select class="" name="" v-model="currentIndex">
+                <option :value="n-1" v-for="n in imageSrc.length">{{ n }}</option>
+            </select>
+            </div>
         </div>
     </div>
 
